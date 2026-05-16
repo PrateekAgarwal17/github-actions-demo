@@ -1,0 +1,15 @@
+# Workflow -> Job -> Step -> Actions
+name: CI Workflow
+
+on:
+  push:
+
+jobs:
+    build:   #job name
+          runs-on: ubuntu-latest  #Github Runners (free)
+          steps:
+              - name: Checkout code
+                uses: actions/checkout@v4   #clone the code into a ubuntu runner
+
+              - name: Setup Docker
+                uses: docker/setup-buildx-action@v4
